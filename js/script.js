@@ -1,6 +1,6 @@
 async function getSongs(folder) {
   currFolder = folder;
-  const baseURL = `https://raw.githubusercontent.com/shubhampatel1573/spotify/main/`;
+  const baseURL = `/spotify/main/`;
   const folderURL = `${baseURL}${folder}/`;
 
   let a = await fetch(folderURL);
@@ -45,7 +45,7 @@ async function getSongs(folder) {
 }
 
 let playMusic = (track, pause = false) => {
-  const baseURL = `https://raw.githubusercontent.com/shubhampatel1573/spotify/main/`;
+  const baseURL = `/spotify/main/`;
   currentSong.src = `${baseURL}${currFolder}/` + track;
   if (!pause) {
     currentSong.play();
@@ -57,7 +57,7 @@ let playMusic = (track, pause = false) => {
 };
 
 async function displayAlbums() {
-  const baseURL = `https://raw.githubusercontent.com/shubhampatel1573/spotify/main/songs/`;
+  const baseURL = `/spotify/main/songs/`;
   let a = await fetch(baseURL);
   let response = await a.text();
   let div = document.createElement("div");
